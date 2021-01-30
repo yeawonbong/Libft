@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 21:40:35 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/22 02:24:21 by ybong            ###   ########.fr       */
+/*   Updated: 2021/01/30 22:46:24 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,12 @@ char			*ft_strtrim(char const *s1, char const *set)
 {
 	char		*res;
 	int			front;
-	int			back;
 	int			lastidx;
 	int			reslen;
 
 	if (!s1 || !set)
 		return (0);
 	front = 0;
-	back = 0;
 	lastidx = ft_strlen(s1) - 1;
 	while (s1[front] && ft_setornot(s1[front], set) == 1)
 		front++;

@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 21:59:07 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/22 02:49:34 by ybong            ###   ########.fr       */
+/*   Updated: 2021/01/30 22:43:43 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ char		*ft_itoa(int n)
 	long long	tempn;
 	char		*res;
 	int			reslen;
-	int			i;
 
-	i = 0;
 	tempn = (long long)n;
 	reslen = ft_count_reslen(tempn);
 	if (!(res = malloc(reslen + 1)))
 		return (0);
 	if (tempn < 0)
 	{
-		res[i++] = '-';
+		res[0] = '-';
 		tempn *= -1;
 	}
 	res[reslen--] = '\0';

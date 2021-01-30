@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 01:38:18 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/22 02:49:10 by ybong            ###   ########.fr       */
+/*   Updated: 2021/01/30 22:36:34 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ static char	ft_fill_arr(char const *s, char c, int i, char **arr)
 	return (0);
 }
 
-static char	**ft_free_mem(char **arr, int height)
+static char	**ft_free_mem(char **arr, int current)
 {
 	int i;
 
 	i = 0;
-	while (i < height)
+	while (i < current)
 	{
 		free(arr[i]);
 		i++;
@@ -89,7 +89,7 @@ char		**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		if (!(arr[i] = malloc(sizeof(char) * (ft_count_width(s, c) + 1))))
-			return (ft_free_mem(arr, height));
+			return (ft_free_mem(arr, i));
 		ft_fill_arr(s, c, i, arr);
 		if (ft_strchr(s, (int)c))
 			s = ft_strchr(s, (int)c);

@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 01:38:18 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/31 02:37:42 by ybong            ###   ########.fr       */
+/*   Updated: 2021/01/31 03:42:46 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static int	ft_count_height(char const *s, char c)
 
 	count = 0;
 	if (*s != c && *s)
-		count = 1;
-	while (*(s = ft_strchr(s, (int)c)))
+		count++;
+	while ((s = ft_strchr(s, (int)c)) != 0 && *s)
 	{
 		if (s[1] && s[1] != c)
 			count++;

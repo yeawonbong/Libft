@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 21:40:35 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/30 22:46:24 by ybong            ###   ########.fr       */
+/*   Updated: 2021/07/04 20:52:26 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-static int		ft_setornot(char c, char const *set)
+static int	ft_setornot(char c, char const *set)
 {
 	while (*set)
 	{
@@ -23,9 +23,9 @@ static int		ft_setornot(char c, char const *set)
 	return (0);
 }
 
-static char		*ft_fill_res(char const *s1, char *res, int size, int i)
+static char	*ft_fill_res(char const *s1, char *res, int size, int i)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (j < size)
@@ -38,7 +38,7 @@ static char		*ft_fill_res(char const *s1, char *res, int size, int i)
 	return (res);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*res;
 	int			front;
@@ -56,7 +56,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	reslen = lastidx - front + 1;
 	if (reslen < 0)
 		reslen = 0;
-	if (!(res = malloc(sizeof(char) * reslen + 1)))
+	res = malloc(sizeof(char) * reslen + 1);
+	if (!res)
 		return (0);
 	return (ft_fill_res(s1, res, reslen, front));
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 17:21:08 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/06 04:41:31 by ybong            ###   ########.fr       */
+/*   Updated: 2021/07/04 20:51:20 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	unsigned char		*tempdst;
 	const unsigned char	*tempsrc;
 
-	tempdst = (unsigned char*)dst;
-	tempsrc = (unsigned char*)src;
+	tempdst = (unsigned char *)dst;
+	tempsrc = (unsigned char *)src;
 	i = 0;
 	if (dst == src || n == 0)
 		return (dst);

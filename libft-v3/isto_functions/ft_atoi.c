@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 16:33:44 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/06 21:39:38 by ybong            ###   ########.fr       */
+/*   Updated: 2021/07/04 20:20:35 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	long long i;
-	long long res;
-	long long minus;
+	long long	i;
+	long long	res;
+	long long	minus;
 
 	i = 0;
 	res = 0;

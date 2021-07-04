@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 01:38:18 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/31 03:42:46 by ybong            ###   ########.fr       */
+/*   Updated: 2021/07/04 20:51:50 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static int	ft_count_height(char const *s, char c)
 {
@@ -19,7 +19,8 @@ static int	ft_count_height(char const *s, char c)
 	count = 0;
 	if (*s != c && *s)
 		count++;
-	while ((s = ft_strchr(s, (int)c)) != 0 && *s)
+	s = ft_strchr(s, (int)c);
+	while (s && *s)
 	{
 		if (s[1] && s[1] != c)
 			count++;
@@ -45,7 +46,7 @@ static int	ft_count_width(char const *s, char c)
 
 static char	ft_fill_arr(char const *s, char c, int i, char **arr)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (!(s[j] == c) && s[j])
@@ -59,7 +60,7 @@ static char	ft_fill_arr(char const *s, char c, int i, char **arr)
 
 static char	**ft_free_mem(char **arr, int current)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < current)
@@ -71,7 +72,7 @@ static char	**ft_free_mem(char **arr, int current)
 	return (NULL);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	int		height;
@@ -80,7 +81,8 @@ char		**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	height = ft_count_height(s, c);
-	if (!(arr = (char**)malloc(sizeof(char*) * (height + 1))))
+	arr = (char **)malloc(sizeof(char *) * (height + 1));
+	if (!(arr))
 		return (0);
 	arr[height] = NULL;
 	i = 0;
@@ -88,7 +90,8 @@ char		**ft_split(char const *s, char c)
 	{
 		while (*s == c)
 			s++;
-		if (!(arr[i] = malloc(sizeof(char) * (ft_count_width(s, c) + 1))))
+		arr[i] = malloc(sizeof(char) * (ft_count_width(s, c) + 1));
+		if (!arr[i])
 			return (ft_free_mem(arr, i));
 		ft_fill_arr(s, c, i, arr);
 		if (ft_strchr(s, (int)c))

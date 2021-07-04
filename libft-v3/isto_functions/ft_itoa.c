@@ -6,11 +6,11 @@
 /*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 21:59:07 by ybong             #+#    #+#             */
-/*   Updated: 2021/07/04 18:07:17 by ybong            ###   ########.fr       */
+/*   Updated: 2021/07/04 20:47:32 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static int	ft_count_reslen(long long n)
 {

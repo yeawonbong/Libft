@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 04:49:47 by ybong             #+#    #+#             */
-/*   Updated: 2021/01/20 21:53:48 by ybong            ###   ########.fr       */
+/*   Updated: 2021/07/04 20:51:06 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	unsigned char	*tempstr;
 	unsigned char	tofind;
 
-	tempstr = (unsigned char*)str;
+	tempstr = (unsigned char *)str;
 	tofind = (unsigned char)c;
 	i = 0;
 	while (i < n)

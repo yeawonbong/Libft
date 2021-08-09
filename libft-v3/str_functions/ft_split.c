@@ -25,6 +25,7 @@ static int	ft_count_height(char const *s, char c)
 		if (s[1] && s[1] != c)
 			count++;
 		s++;
+		s = ft_strchr(s, (int)c);
 	}
 	return (count);
 }
